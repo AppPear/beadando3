@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1461974784 source:c:\users\andris\desktop\beadando\box.cpp
+	"box.h"
+
+1463687765 c:\users\andris\desktop\beadando\box.h
+	"graphics.hpp"
+	"functional"
+
+1430018866 c:\users\andris\desktop\beadando\include\graphics.hpp
+	<string>
+
+1461974784 source:c:\users\andris\desktop\beadando\button.cpp
+	"Button.h"
+	<iostream>
+
+1461974784 c:\users\andris\desktop\beadando\button.h
+	"box.h"
+
+1463682591 source:c:\users\andris\desktop\beadando\main.cpp
+	"Application.h"
+
+1463682591 c:\users\andris\desktop\beadando\application.h
+	<vector>
+	"box.h"
+	"graphics.hpp"
+
+1463687380 source:c:\users\andris\desktop\beadando\application.cpp
+	"Application.h"
+	<fstream>
+	"dot.h"
+
+1463687811 source:c:\users\andris\desktop\beadando\dot.cpp
+	"dot.h"
+	<cmath>
+
+1463687811 c:\users\andris\desktop\beadando\dot.h
+	"box.h"
+	"graphics.hpp"
+

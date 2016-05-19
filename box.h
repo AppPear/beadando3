@@ -66,9 +66,9 @@ class colour
 {
     public:
         colour(int r, int g, int b);
-        int r(){return pr;};
-        int g(){return pg;};
-        int b (){return pb;};
+        int r()const {return pr;};
+        int g()const {return pg;};
+        int b ()const {return pb;};
     protected:
         int pr,pg,pb;
     private:
