@@ -16,25 +16,35 @@
 1461974784 c:\users\andris\desktop\beadando\button.h
 	"box.h"
 
-1463682591 source:c:\users\andris\desktop\beadando\main.cpp
+1463739721 source:c:\users\andris\desktop\beadando\main.cpp
 	"Application.h"
 
-1463738317 c:\users\andris\desktop\beadando\application.h
+1463755166 c:\users\andris\desktop\beadando\application.h
 	<vector>
 	"box.h"
 	"graphics.hpp"
+	"dot.h"
+	"indicatorArrow.h"
 
-1463738364 source:c:\users\andris\desktop\beadando\application.cpp
+1463755790 source:c:\users\andris\desktop\beadando\application.cpp
 	"Application.h"
 	<fstream>
-	"dot.h"
 	<iostream>
 
-1463738517 source:c:\users\andris\desktop\beadando\dot.cpp
+1463753166 source:c:\users\andris\desktop\beadando\dot.cpp
 	"dot.h"
 	<cmath>
 
-1463687811 c:\users\andris\desktop\beadando\dot.h
+1463753166 c:\users\andris\desktop\beadando\dot.h
 	"box.h"
 	"graphics.hpp"
+
+1463755209 c:\users\andris\desktop\beadando\indicatorarrow.h
+	"box.h"
+	"graphics.hpp"
+	"dot.h"
+
+1463746828 source:c:\users\andris\desktop\beadando\indicatorarrow.cpp
+	"indicatorArrow.h"
+	<iostream>
 

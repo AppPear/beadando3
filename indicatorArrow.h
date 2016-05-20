@@ -4,6 +4,7 @@
 #include "box.h"
 #include "graphics.hpp"
 #include "dot.h"
+
 typedef enum{
     ONE,TWO
 }player;
@@ -14,12 +15,12 @@ class indicatorArrow: public boxy
         indicatorArrow(CGRect _frame);
         virtual void handle(event ev);
         virtual void draw();
-        void setPlayer(player)
-
+        void setPlayer(player nextPlayer);
+        player getPlayer(){return CurrentPlayer;};
     protected:
 
     private:
-
+        player CurrentPlayer;
 };
 
 #endif // INDICATORARROW_H
