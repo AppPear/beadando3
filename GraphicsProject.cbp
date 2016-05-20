@@ -46,6 +46,8 @@
 		<Unit filename="Button.h" />
 		<Unit filename="box.cpp" />
 		<Unit filename="box.h" />
+		<Unit filename="dot.cpp" />
+		<Unit filename="dot.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

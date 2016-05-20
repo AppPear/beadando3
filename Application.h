@@ -8,8 +8,8 @@ class Application
 {
     public:
         Application();
+        std::vector<std::vector<boxy *>> dotWidgets;
         std::vector<boxy *> widgets;
-
         void fuss();
 
     protected:
