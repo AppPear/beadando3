@@ -54,8 +54,8 @@ int witchColumn(int x){
     }
     return column;
 }
-player checkIfSomeBodyWon(vector<vector<Dott*>>&dots){
-    /*///check rows
+dotState checkIfSomeBodyWon(vector<vector<Dott*>>&dots){
+    ///check rows
     int counter = 0;
     dotState newDot;
     dotState oldDot;
@@ -68,7 +68,7 @@ player checkIfSomeBodyWon(vector<vector<Dott*>>&dots){
                 counter = 0;
             }
             if(counter > 2){
-                cout<<"Winnery"<<endl;
+                return newDot;
             }
             oldDot = newDot;
         }
@@ -88,31 +88,97 @@ player checkIfSomeBodyWon(vector<vector<Dott*>>&dots){
                 counter = 0;
             }
             if(counter > 2){
-                cout<<"Winnery"<<endl;
+                return newDot;
             }
             oldDot = newDot;
 
         }
         counter = 0;
-    }*/
+    }
     ///check diagonals
-    for(int i = 0; i < 6; i++){
+    newDot = allWhite;
+    oldDot = allWhite;
+    counter = 0;
+    for(int i = 3; i < 6; i++){
         for(int j = 0; j < i+1;j++){
-            cout<<"("<<j+1<<","<<i+1-j<<") ";
-        }
-        cout<<endl;
+            //cout<<"("<<j+1<<","<<i+1-j<<") ";
+            newDot = dots[i-j][j]->getState();
+            if(newDot == oldDot && newDot != allWhite){
+            counter++;
+            }else{
+                counter = 0;
+            }
+            if(counter > 2){
+                return newDot;
+            }
+                oldDot = newDot;
+            }
+            counter = 0;
     }
-    for(int i = 6; i >= 0; i--){
+
+    newDot = allWhite;
+    oldDot = allWhite;
+    counter = 0;
+    for(int i = 2; i >= 0; i--){
         for(int j = 6; j > i;j--){
-            cout<<"("<<j<<","<<i+1-j+7<<") ";
-        }
-        cout<<endl;
+            //cout<<"("<<j<<","<<i+1-j+7<<") ";
+            newDot = dots[i-j+7][j-1]->getState();
+            if(newDot == oldDot && newDot != allWhite){
+            counter++;
+            }else{
+                counter = 0;
+            }
+            if(counter > 2){
+                return newDot;
+            }
+                oldDot = newDot;
+            }
+            counter = 0;
     }
-    cout<<endl;
     ///check antidiagonals
+    newDot = allWhite;
+    oldDot = allWhite;
+    counter = 0;
+    for(int i = 3; i < 6; i++){
+        for(int j = 0; j < i+1;j++){
+            //cout<<"("<<j+1<<","<<j+6-i+1<<") ";
+            newDot = dots[j+6-i][j]->getState();
+            if(newDot == oldDot && newDot != allWhite){
+            counter++;
+            }else{
+                counter = 0;
+            }
+            if(counter > 2){
+                return newDot;
+            }
+                oldDot = newDot;
+            }
+            counter = 0;
+
+    }
+
+    newDot = allWhite;
+    oldDot = allWhite;
+    counter = 0;
+    for(int i = 3; i < 6; i++){
+        for(int j = 0; j < i+1;j++){
+            //cout<<"("<<j+6-i<<","<<j+1<<") ";
+            newDot = dots[j][j+5-i]->getState();
+            if(newDot == oldDot && newDot != allWhite){
+            counter++;
+            }else{
+                counter = 0;
+            }
+            if(counter > 2){
+                return newDot;
+            }
+                oldDot = newDot;
+            }
+            counter = 0;
+    }
 
 
-    return NON;
+    return allWhite;
 }
 void Application::fuss(){
     gout.open(windowWidth,windowHeight);
@@ -149,8 +215,15 @@ void Application::fuss(){
                     }
                 }
                 if(ev.type == ev_timer){
-                    if(checkIfSomeBodyWon(dotWidgets) != NON){
-                        cout<<checkIfSomeBodyWon(dotWidgets);
+                    if(checkIfSomeBodyWon(dotWidgets) != allWhite){
+                        switch(checkIfSomeBodyWon(dotWidgets)){
+                        case: ONEgotit:
+
+                        break;
+                        case:TWOgotit
+
+                        break
+                        }
                     }
                 }
 
