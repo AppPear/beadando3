@@ -6,7 +6,7 @@
 #include "dot.h"
 
 typedef enum{
-    ONE,TWO
+    NON,ONE,TWO
 }player;
 
 class indicatorArrow: public boxy

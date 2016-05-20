@@ -26,10 +26,11 @@
 	"dot.h"
 	"indicatorArrow.h"
 
-1463755790 source:c:\users\andris\desktop\beadando\application.cpp
+1463764531 source:c:\users\andris\desktop\beadando\application.cpp
 	"Application.h"
 	<fstream>
 	<iostream>
+	<cmath>
 
 1463753166 source:c:\users\andris\desktop\beadando\dot.cpp
 	"dot.h"
@@ -39,7 +40,7 @@
 	"box.h"
 	"graphics.hpp"
 
-1463755209 c:\users\andris\desktop\beadando\indicatorarrow.h
+1463759709 c:\users\andris\desktop\beadando\indicatorarrow.h
 	"box.h"
 	"graphics.hpp"
 	"dot.h"

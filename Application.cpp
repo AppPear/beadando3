@@ -1,6 +1,7 @@
 #include "Application.h"
 #include <fstream>
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 using namespace genv;
@@ -39,8 +40,9 @@ void placeDottInColumn(vector<vector<Dott*>>&dots, int column, dotState state){
             minIndex = i;
         }
     }
-    cout<<minIndex<<endl;
-    dots[column][minIndex]->setState(state);
+    if(minIndex >= 0 &&minIndex < 7){
+        dots[column][minIndex]->setState(state);
+    }
 }
 int witchColumn(int x){
     int column = (x-edge)/boxSize;
@@ -52,10 +54,69 @@ int witchColumn(int x){
     }
     return column;
 }
+player checkIfSomeBodyWon(vector<vector<Dott*>>&dots){
+    /*///check rows
+    int counter = 0;
+    dotState newDot;
+    dotState oldDot;
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns;j++){
+            newDot = dots[j][i]->getState();
+            if(newDot == oldDot && newDot != allWhite){
+                counter++;
+            }else{
+                counter = 0;
+            }
+            if(counter > 2){
+                cout<<"Winnery"<<endl;
+            }
+            oldDot = newDot;
+        }
+        counter = 0;
+    }
 
+    ///check columns
+    newDot = allWhite;
+    oldDot = allWhite;
+    counter = 0;
+    for(int i = 0; i < columns; i++){
+        for(int j = 0; j < rows;j++){
+            newDot = dots[i][j]->getState();
+            if(newDot == oldDot && newDot != allWhite){
+                counter++;
+            }else{
+                counter = 0;
+            }
+            if(counter > 2){
+                cout<<"Winnery"<<endl;
+            }
+            oldDot = newDot;
+
+        }
+        counter = 0;
+    }*/
+    ///check diagonals
+    for(int i = 0; i < 6; i++){
+        for(int j = 0; j < i+1;j++){
+            cout<<"("<<j+1<<","<<i+1-j<<") ";
+        }
+        cout<<endl;
+    }
+    for(int i = 6; i >= 0; i--){
+        for(int j = 6; j > i;j--){
+            cout<<"("<<j<<","<<i+1-j+7<<") ";
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+    ///check antidiagonals
+
+
+    return NON;
+}
 void Application::fuss(){
     gout.open(windowWidth,windowHeight);
-   // gin.timer(16);
+    gin.timer(100);
 
     event ev;
     while (gin >> ev) {
@@ -85,6 +146,11 @@ void Application::fuss(){
                             break;
                         }
                         placeDottInColumn(dotWidgets,witchColumn(ev.pos_x),dState);
+                    }
+                }
+                if(ev.type == ev_timer){
+                    if(checkIfSomeBodyWon(dotWidgets) != NON){
+                        cout<<checkIfSomeBodyWon(dotWidgets);
                     }
                 }
 
