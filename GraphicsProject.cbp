@@ -48,7 +48,11 @@
 		<Unit filename="box.h" />
 		<Unit filename="dot.cpp" />
 		<Unit filename="dot.h" />
+		<Unit filename="indicatorArrow.cpp" />
+		<Unit filename="indicatorArrow.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="textWidget.cpp" />
+		<Unit filename="textWidget.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

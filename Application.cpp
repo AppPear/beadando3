@@ -2,7 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <cmath>
-
+#include "textWidget.h"
 using namespace std;
 using namespace genv;
 
@@ -32,6 +32,11 @@ Application::Application()
     }
     arrow = new indicatorArrow(CGRect(edge,edge-boxSize,boxSize-15, boxSize-15));
     widgets.push_back(arrow);
+    textWidget *one = new textWidget(CGRect(8,50,80,60),"ONE",playerOne);
+    widgets.push_back(one);
+    textWidget *two = new textWidget(CGRect(688,50,80,60),"TWO",playerTwo);
+    widgets.push_back(two);
+
 }
 void placeDottInColumn(vector<vector<Dott*>>&dots, int column, dotState state){
     int minIndex = dots[column].size();
@@ -217,12 +222,20 @@ void Application::fuss(){
                 if(ev.type == ev_timer){
                     if(checkIfSomeBodyWon(dotWidgets) != allWhite){
                         switch(checkIfSomeBodyWon(dotWidgets)){
-                        case: ONEgotit:
-
+                        case ONEgotit:
+                            if(dotWidgets.size() > 0){
+                                dotWidgets.clear();
+                                textWidget *one = new textWidget(CGRect(200,380,160,60),"player ONE won",color(255,255,255));
+                                widgets.push_back(one);
+                            }
                         break;
-                        case:TWOgotit
-
-                        break
+                        case TWOgotit:
+                            if(dotWidgets.size() > 0){
+                                dotWidgets.clear();
+                                textWidget *one = new textWidget(CGRect(200,320,160,60),"player TWO won",color(255,255,255));
+                                widgets.push_back(one);
+                            }
+                        break;
                         }
                     }
                 }
